@@ -10,6 +10,9 @@ namespace CodeGeist2019.Models
     {
         [Key]
         public int ID { get; set; }
+
+        public string Email { get; set; } //For binding account with ApplicationUser
+
         [Required]
         [Display(Name ="Full Name")]
         public string Name { get; set; }
@@ -17,15 +20,17 @@ namespace CodeGeist2019.Models
         [Required]
         [Display(Name = "Gender")]
         public string Gender { get; set; }
+
         [Required]
         public int Age { get; set; }
+
         public string BioGraphy { get; set; }
         public double Rating { get; set; }
         public bool Verfied{ get; set; }
 
-        public virtual List<Book> WriteList { get; set; }
-        public virtual List<Book> ReadList{ get; set; }
-        public virtual List<Book> LinkedList { get; set; }
+        public List<Book> WriteList { get; set; }
+        public List<Book> ReadList { get; set; }
+        public List<Book> LikedList { get; set; }
 
     }
 }
