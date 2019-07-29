@@ -22,17 +22,29 @@ namespace CodeGeist2019.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            //var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            //var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
 
-            //string roleName = "Admin";
-            //IdentityResult roleResult;
+            string roleName1 = "Writer";
+            string roleName2 = "Designer";
+            string roleName3 = "Translator";
+            IdentityResult roleResult;
 
-            //if (!RoleManager.RoleExists(roleName))
-            //{
-            //    roleResult = RoleManager.Create(new IdentityRole(roleName));
-            //}
+            if (!RoleManager.RoleExists(roleName1))
+            {
+                roleResult = RoleManager.Create(new IdentityRole(roleName1));
+            }
+
+            if (!RoleManager.RoleExists(roleName2))
+            {
+                roleResult = RoleManager.Create(new IdentityRole(roleName2));
+            }
+
+            if (!RoleManager.RoleExists(roleName3))
+            {
+                roleResult = RoleManager.Create(new IdentityRole(roleName3));
+            }
         }
     }
 }
