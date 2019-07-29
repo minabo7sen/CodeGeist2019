@@ -53,6 +53,7 @@ namespace CodeGeist2019.Controllers
                 Age = uvm.NewUser.Age,
                 Gender = uvm.NewUser.Gender,
                 BioGraphy = uvm.NewUser.BioGraphy,
+                Email = User.Identity.GetUserName()
                 //etc...
 
             };
@@ -61,6 +62,15 @@ namespace CodeGeist2019.Controllers
             _context.Account.Add(account);
             _context.SaveChanges();
             return View("../Home/Index");
+        }
+
+        public ActionResult MyProfile()
+        {
+            var email = User.Identity.GetUserName();
+
+            var Acc = _context.Account.SingleOrDefault(a => a.Email == email);
+
+            return View("MyProfile", Acc);
         }
     }
 }
