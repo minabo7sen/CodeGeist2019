@@ -18,7 +18,7 @@ namespace CodeGeist2019.Controllers
         // GET: Books
         public ActionResult Index()
         {
-            return View(db.Book.ToList());
+            return View("Index",db.Book.ToList());
         }
 
         // GET: Books/Details/5
@@ -60,11 +60,12 @@ namespace CodeGeist2019.Controllers
                 book.File = bookFile;
 
                 db.BookFiles.Add(bookFile);
+                db.SaveChanges();
+                book.File = db.BookFiles.SingleOrDefault(f => f.FilePath == FileName);
             }
-
             db.Book.Add(book);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Books");
 
 
             //return View("Create",book);
@@ -127,13 +128,13 @@ namespace CodeGeist2019.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }
