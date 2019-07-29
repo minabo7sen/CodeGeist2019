@@ -205,6 +205,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap_Sketchy.css" />
+    <Content Include="Content\sidenav.css" />
     <Content Include="Content\SVG\ancient.svg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -248,6 +249,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\sidenav.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />

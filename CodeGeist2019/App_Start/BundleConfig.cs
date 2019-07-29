@@ -24,8 +24,14 @@ namespace CodeGeist2019
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap_Sketchy.css",
-                    //  "~/Content/bootstrap.css",
+                      //  "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/sidenav").Include(
+                "~/Content/sidenav.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/sidenav").Include(
+                "~/Scripts/sidenav.js"));
         }
     }
 }
