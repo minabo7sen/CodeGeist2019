@@ -20,6 +20,8 @@ namespace CodeGeist2019.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Book> Book { get; set; }
+        public DbSet<Account> Account{ get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
