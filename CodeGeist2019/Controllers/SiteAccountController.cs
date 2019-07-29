@@ -52,6 +52,7 @@ namespace CodeGeist2019.Controllers
                 Name = uvm.NewUser.Name,
                 Age = uvm.NewUser.Age,
                 Gender = uvm.NewUser.Gender,
+                BioGraphy = uvm.NewUser.BioGraphy,
                 //etc...
 
             };
