@@ -23,7 +23,8 @@ namespace CodeGeist2019
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap_Sketchy.css",
+                    //  "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
     }
