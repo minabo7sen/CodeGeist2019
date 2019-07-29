@@ -26,6 +26,5 @@ namespace CodeGeist2019.Controllers
 
             return View();
         }
-       
     }
 }

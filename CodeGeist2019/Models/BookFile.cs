@@ -15,5 +15,4 @@ namespace CodeGeist2019.Models
         public string FilePath { get; set; }
 
     }
-    
 }

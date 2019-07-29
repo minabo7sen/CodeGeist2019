@@ -18,7 +18,7 @@ namespace CodeGeist2019.Controllers
         // GET: Books
         public ActionResult Index()
         {
-            return View("Index", db.Book.ToList());
+            return View("Index",db.Book.ToList());
         }
 
         // GET: Books/Details/5
