@@ -25,29 +25,29 @@
                     <a class="nav-link" href="~/Home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 @*@if (User.Identity.IsAuthenticated)
-                {
-                    if (User.IsInRole("Seeker"))
                     {
+                        if (User.IsInRole("Seeker"))
+                        {
 
-                        <li class="nav-item">
-                            @Html.ActionLink("My Profile", "ShowProfile", "Seeker", routeValues: null, htmlAttributes: new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Check New Jobs", "AllJobs", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link" })
-                        </li>
-                    }
+                            <li class="nav-item">
+                                @Html.ActionLink("My Profile", "ShowProfile", "Seeker", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Check New Jobs", "AllJobs", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+                            </li>
+                        }
 
-                    if (User.IsInRole("Provider"))
-                    {
-                        <li class="nav-item">
-                            @Html.ActionLink("My Profile", "ShowProfile", "Provider", routeValues: null, htmlAttributes: new { @class = "nav-link" })
-                        </li>
+                        if (User.IsInRole("Provider"))
+                        {
+                            <li class="nav-item">
+                                @Html.ActionLink("My Profile", "ShowProfile", "Provider", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+                            </li>
 
-                        <li class="nav-item">
-                            @Html.ActionLink("Posted Jobs", "CompanyJobs", "Provider", routeValues: null, htmlAttributes: new { @class = "nav-link" })
-                        </li>
-                    }
-                }*@
+                            <li class="nav-item">
+                                @Html.ActionLink("Posted Jobs", "CompanyJobs", "Provider", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+                            </li>
+                        }
+                    }*@
 
             </ul>
 
@@ -68,6 +68,7 @@
             <p>&copy; @DateTime.Now.Year - Hackathon</p>
         </footer>
     </div>
+    
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

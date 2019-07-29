@@ -182,10 +182,15 @@
     <Compile Include="Migrations\201907291027235_BookAndAccountTable.Designer.cs">
       <DependentUpon>201907291027235_BookAndAccountTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907291522551_AddedBookFile.cs" />
+    <Compile Include="Migrations\201907291522551_AddedBookFile.Designer.cs">
+      <DependentUpon>201907291522551_AddedBookFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookFile.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -299,6 +304,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Books\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907291027235_BookAndAccountTable.resx">
       <DependentUpon>201907291027235_BookAndAccountTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907291522551_AddedBookFile.resx">
+      <DependentUpon>201907291522551_AddedBookFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

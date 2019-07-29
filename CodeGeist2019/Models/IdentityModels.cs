@@ -22,6 +22,7 @@ namespace CodeGeist2019.Models
     {
         public DbSet<Book> Book { get; set; }
         public DbSet<Account> Account{ get; set; }
+        public DbSet<BookFile> BookFiles { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
