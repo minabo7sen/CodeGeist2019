@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,16 +47,27 @@ namespace CodeGeist2019.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Price,Rating,AgeLimit,Category,Views")] Book book)
+        public ActionResult Save(Book book, BookFile bookFile, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
+
+            if (file != null)
             {
-                db.Book.Add(book);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var extension = Path.GetExtension(file.FileName).ToLower();
+                var FileName = file.FileName;
+                file.SaveAs(HttpContext.Server.MapPath("~/Books/") + FileName);
+
+                bookFile.FilePath = FileName;
+                book.File = bookFile;
+
+                db.BookFiles.Add(bookFile);
             }
 
-            return View(book);
+            db.Book.Add(book);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+            //return View("Create",book);
         }
 
         // GET: Books/Edit/5

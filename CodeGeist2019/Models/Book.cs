@@ -16,9 +16,11 @@ namespace CodeGeist2019.Models
         public double Price { get; set; }
         public double Rating { get; set; }
         public int AgeLimit { get; set; }
-        public String Category { get; set; }
+        public string Category { get; set; }
         public int Views { get; set; }
         public Account Author { get; set; }
+
+        public BookFile File { get; set; }
 
     }
     
