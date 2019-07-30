@@ -11,15 +11,15 @@
             <div class="card-img-top" src="" alt="Book Image"></div>
             <div class="card-body">
                 <h4 class="card-title">@item.Title</h4>
-                <p class="card-text"></p>
+                <p class="card-text">@item.Description</p>
             </div>
             <div class="card-footer">
                 <div class="float-left">
-                    <a href="#">Heart</a>
+                   <a href="/"><img id="sizing" src="~/Content/SVG/heart-solid (1).svg"/></a>
                     <a href="#">Comment</a>
                 </div>
                 <div class="float-right">
-                    <small>Rating: <strong>7.8</strong></small>
+                    <small>Rating: <strong>@item.Rating</strong></small>
                 </div>
             </div>
         </div>
@@ -33,5 +33,10 @@
     #pady {
         
        margin-bottom:30px;
+    }
+    #sizing {
+       height:16px;
+       width:16px;
+        
     }
 </style>
