@@ -219,6 +219,7 @@
     <Content Include="Content\bootstrap_Sketchy.css" />
     <Content Include="Content\sidenav.css" />
     <Content Include="Content\SVG\ancient.svg" />
+    <Content Include="Content\SVG\heart-solid %281%29.svg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
