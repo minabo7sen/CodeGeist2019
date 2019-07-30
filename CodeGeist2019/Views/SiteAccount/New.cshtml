@@ -11,7 +11,7 @@
 {
     @Html.AntiForgeryToken()
     
-<div class="form-horizontal">
+<div class="col-md-6">
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -44,10 +44,11 @@
         </div>
     </div>
     <div class="form-group">
+        @Html.LabelFor(model => model.NewUser.BioGraphy, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <div class="form-group">
-            @Html.TextAreaFor(model => model.NewUser.BioGraphy)
-            </div>    
+                @Html.TextAreaFor(model => model.NewUser.BioGraphy, htmlAttributes: new { @class = "form-control" })
+            </div>
         </div>
     </div>
     
@@ -55,7 +56,7 @@
         @Html.LabelFor(model => model.Designer, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <div class="checkbox">
-                @Html.EditorFor(model => model.Designer)
+                @Html.EditorFor(model => model.Designer, new { htmlAttributes = new { @class = "mt-checkbox" } })
                 @Html.ValidationMessageFor(model => model.Designer, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -65,7 +66,7 @@
         @Html.LabelFor(model => model.Translator, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <div class="checkbox">
-                @Html.EditorFor(model => model.Translator)
+                @Html.EditorFor(model => model.Translator, new { htmlAttributes = new { @class = "mt-checkbox" } })
                 @Html.ValidationMessageFor(model => model.Translator, "", new { @class = "text-danger" })
             </div>
         </div>
