@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CodeGeist2019.Models;
+using Microsoft.AspNet.Identity;
 
 namespace CodeGeist2019.Controllers
 {
@@ -33,7 +34,20 @@ namespace CodeGeist2019.Controllers
             {
                 return HttpNotFound();
             }
+
+            var email = User.Identity.GetUserName();
+            var Acc = db.Account.SingleOrDefault(a => a.Email == email);
+
+            if(book.Price == 0)
+            {
+                return View(book);
+            }
+            if (!Acc.BoughtBooks.Any(b => b.ID == id))
+            {
+                return View("PurchaseBook", book);
+            }
             return View(book);
+            
         }
 
         // GET: Books/Create
