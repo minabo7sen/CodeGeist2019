@@ -18,7 +18,7 @@ namespace CodeGeist2019.Models
         public int AgeLimit { get; set; }
         public string Category { get; set; }
         public int Views { get; set; }
-
+        public string Description { get; set; }
 
         public Account Author { get; set; }
         public BookFile File { get; set; }

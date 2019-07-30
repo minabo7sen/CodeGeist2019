@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201907300809449_AddBooksAuthorization.Designer.cs">
       <DependentUpon>201907300809449_AddBooksAuthorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907300846011_BooksModified.cs" />
+    <Compile Include="Migrations\201907300846011_BooksModified.Designer.cs">
+      <DependentUpon>201907300846011_BooksModified.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -592,6 +596,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907300809449_AddBooksAuthorization.resx">
       <DependentUpon>201907300809449_AddBooksAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907300846011_BooksModified.resx">
+      <DependentUpon>201907300846011_BooksModified.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

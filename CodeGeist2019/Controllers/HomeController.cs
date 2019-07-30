@@ -1,16 +1,23 @@
-﻿using System;
+﻿using CodeGeist2019.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+
 
 namespace CodeGeist2019.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext Db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
-            return View();
+            var books = new List<Book>(Db.Book);
+           
+            return View(books);
         }
 
         public ActionResult About()
