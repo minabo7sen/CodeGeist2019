@@ -46,6 +46,7 @@ namespace CodeGeist2019.Controllers
                 UserManager.AddToRole(id, "Translator");
             }
 
+            UserManager.AddToRole(id, "Writer"); //Default Role
 
             Account account = new Account
             {

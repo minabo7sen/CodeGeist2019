@@ -9,7 +9,9 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table m-table m-table--head-separator-primary table-bordered">
+    <thead class="thead-light">
+
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
@@ -31,6 +33,7 @@
         </th>
         <th></th>
     </tr>
+    </thead>
 
 @foreach (var item in Model) {
     <tr>
