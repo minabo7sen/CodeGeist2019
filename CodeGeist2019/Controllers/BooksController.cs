@@ -19,6 +19,18 @@ namespace CodeGeist2019.Controllers
         // GET: Books
         public ActionResult Index()
         {
+             /*var GenreLst = new List<string>();
+            var GenreQry = from d in db.Book orderby d.Title select d.Title;
+            GenreLst.AddRange(GenreQry.Distinct());
+            ViewBag.BookTag = new SelectList(GenreLst);
+            var Booky = from m in db.Book select m;
+
+
+            if (!String.IsNullOrEmpty("BookTag"))
+            {
+                Booky = Booky.Where(x => x.Category == "BookTag");
+            }
+            */
             return View("Index", db.Book.ToList());
         }
 
