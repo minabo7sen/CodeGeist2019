@@ -217,6 +217,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap_Sketchy.css" />
+    <Content Include="Content\fawry.png" />
+    <Content Include="Content\mastercard.png" />
     <Content Include="Content\sidenav.css" />
     <Content Include="Content\SVG\ancient.svg" />
     <Content Include="Content\SVG\heart-solid %281%29.svg" />
@@ -568,6 +570,7 @@
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\SiteAccount\New.cshtml" />
     <Content Include="Views\SiteAccount\MyProfile.cshtml" />
+    <Content Include="Views\Books\PurchaseBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

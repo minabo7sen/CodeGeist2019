@@ -1,0 +1,92 @@
+﻿@model CodeGeist2019.Models.Book
+
+<div class="m-portlet m-portlet--bordered-semi m-portlet--space m-portlet--full-height ">
+    <div class="m-portlet__head">
+        <div class="m-portlet__head-caption">
+            <div class="m-portlet__head-title">
+                <h3 class="m-portlet__head-text">
+                    <h2 class="text-primary">
+                        @Model.Title
+                    </h2>
+                    <span class="m-portlet__head-desc">
+                        @Model.Category
+                    </span>
+                </h3>
+
+            </div>
+        </div>
+        <div class="m-portlet__head-tools">
+            <div class="row">
+
+                <div class="col-md-7"></div>
+                <div class="align-content-end col-md-5">
+                    <div class="form-group text-center">
+                        <img height="77" width="128" src="~/Content/mastercard.png" />
+                        <img height="83" width="164" src="~/Content/fawry.png" />
+
+                    </div>
+                </div>
+            </div>
+            <ul class="m-portlet__nav">
+                <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
+
+                    <div class="col-md-12 mt-3">
+                        @Html.ActionLink("Confirm Purchase", "ConfirmPurchase", new { id = Model.ID }, new { @class = "btn m-btn--pill  btn-success" })
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="m-portlet__body">
+        <div class="m-widget25">
+            <span class="m-widget25__price m--font-brand">
+                $@Model.Price
+            </span>
+            <span class="m-widget25__desc">
+                Book's Price
+            </span>
+            <div class="m-widget25--progress">
+                <div class="m-widget25__progress">
+                    <span class="m-widget25__progress-number">
+                        63%
+                    </span>
+                    <div class="m--space-10"></div>
+                    <div class="progress m-progress--sm">
+                        <div class="progress-bar m--bg-danger" role="progressbar" style="width: 63%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="m-widget25__progress-sub">
+                        Sales Growth
+                    </span>
+                </div>
+                <div class="m-widget25__progress">
+                    <span class="m-widget25__progress-number">
+                        39%
+                    </span>
+                    <div class="m--space-10"></div>
+                    <div class="progress m-progress--sm">
+                        <div class="progress-bar m--bg-accent" role="progressbar" style="width: 39%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="m-widget25__progress-sub">
+                        Product Growth
+                    </span>
+                </div>
+                <div class="m-widget25__progress">
+                    <span class="m-widget25__progress-number">
+                        54%
+                    </span>
+                    <div class="m--space-10"></div>
+                    <div class="progress m-progress--sm">
+                        <div class="progress-bar m--bg-warning" role="progressbar" style="width: 54%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="m-widget25__progress-sub">
+                        Community Growth
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
