@@ -32,5 +32,8 @@ namespace CodeGeist2019.Models
         public List<Book> ReadList { get; set; }
         public List<Book> LikedList { get; set; }
 
+
+        public virtual ICollection<Book> BoughtBooks { get; set; }
+
     }
 }

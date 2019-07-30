@@ -25,9 +25,29 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            <div class="row col-md-10">
+                <div class="col-md-10">
+                    <div class="input-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                $
+                            </span>
+
+                        </div>
+
+                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control m-input" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+                <div class="m-checkbox-inline col-md-2 mt-2">
+                    <label class="m-checkbox m-checkbox--air m-checkbox--solid m-checkbox--state-success">
+                        <input type="checkbox" id="free" onclick="myFunction()">
+                        Free
+                        <span></span>
+                    </label>
+
+                </div>
             </div>
         </div>
 
@@ -83,10 +103,26 @@
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 
 <script>
+
     $('#FilePath').on('change', function (e) {
         //get the file name
         var fileName = e.target.files[0].name;
         //replace the "Choose a file" label
         $(this).next('.custom-file-label').html(fileName);
     })
+
+
+    function myFunction() {
+        // Get the checkbox
+        var checkBox = document.getElementById("free");
+        
+
+        // If the checkbox is checked, display the output text
+        if (checkBox.checked == true) {
+            document.getElementById("Price").disabled = true;
+            document.getElementById("Price").value = 0;
+        } else {
+            document.getElementById("Price").disabled = false;
+        }
+    }
 </script>

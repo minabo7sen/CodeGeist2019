@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201907292049332_AddedAccountEmail.Designer.cs">
       <DependentUpon>201907292049332_AddedAccountEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907300809449_AddBooksAuthorization.cs" />
+    <Compile Include="Migrations\201907300809449_AddBooksAuthorization.Designer.cs">
+      <DependentUpon>201907300809449_AddBooksAuthorization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -585,6 +589,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907292049332_AddedAccountEmail.resx">
       <DependentUpon>201907292049332_AddedAccountEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907300809449_AddBooksAuthorization.resx">
+      <DependentUpon>201907300809449_AddBooksAuthorization.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

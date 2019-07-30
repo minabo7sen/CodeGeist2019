@@ -23,6 +23,7 @@ namespace CodeGeist2019.Models
         public DbSet<Book> Book { get; set; }
         public DbSet<Account> Account{ get; set; }
         public DbSet<BookFile> BookFiles { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -31,6 +32,22 @@ namespace CodeGeist2019.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Account>()
+                        .HasMany<Book>(s => s.BoughtBooks)
+                        .WithMany(c => c.AllowedAccounts)
+                        .Map(cs =>
+                        {
+                            cs.MapLeftKey("AccountID");
+                            cs.MapRightKey("BookID");
+                            cs.ToTable("PurchasedBooks");
+                        });
+
         }
     }
 }
