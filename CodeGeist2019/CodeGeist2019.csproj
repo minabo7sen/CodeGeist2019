@@ -574,6 +574,7 @@
     <Content Include="Views\SiteAccount\MyProfile.cshtml" />
     <Content Include="Views\Books\PurchaseBook.cshtml" />
     <Content Include="Views\Home\Designer.cshtml" />
+    <Content Include="Views\Home\Translater.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

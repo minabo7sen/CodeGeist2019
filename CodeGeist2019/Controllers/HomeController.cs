@@ -39,9 +39,30 @@ namespace CodeGeist2019.Controllers
 
         public ActionResult Designer()
         {
-            var x = Roles.GetUsersInRole("Designer");
+            //var x = Roles.GetUsersInRole("Designer");
+            List<Account> DesignersAccounts = new List<Account>();
+            var x = Db.Roles.SingleOrDefault(r => r.Name == "Designer");
+            foreach(var user in x.Users)
+            {
+                var u = Db.Users.SingleOrDefault(y => y.Id == user.UserId);
+                var account = Db.Account.SingleOrDefault(m => m.Email == u.Email);
+                DesignersAccounts.Add(account);
+            }
+            
+            return View(DesignersAccounts);
+        }
+        public ActionResult Translater()
+        {
+            List<Account> TranslaterAccounts = new List<Account>();
+            var x = Db.Roles.SingleOrDefault(r => r.Name == "Translator");
+            foreach (var user in x.Users)
+            {
+                var u = Db.Users.SingleOrDefault(y => y.Id == user.UserId);
+                var account = Db.Account.SingleOrDefault(m => m.Email == u.Email);
+                TranslaterAccounts.Add(account);
+            }
 
-            return View();
+            return View(TranslaterAccounts);
         }
 
     }
