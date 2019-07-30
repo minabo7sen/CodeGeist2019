@@ -2,7 +2,15 @@
 @{
     ViewBag.Title = "Home Page";
 }
-
+@*
+@using (Html.BeginForm())
+{
+    <p> search by Category :@Html.DropDownList("BookTag")
+    <br/>
+    <input type="submit" value="Filter"/>
+    </p>
+       
+}*@
 <div class="row">
 @foreach (var item in Model)
 {
