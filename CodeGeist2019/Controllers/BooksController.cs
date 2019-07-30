@@ -17,7 +17,7 @@ namespace CodeGeist2019.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Books
-        public ActionResult Index()
+        public ActionResult BooksList()
         {
              /*var GenreLst = new List<string>();
             var GenreQry = from d in db.Book orderby d.Title select d.Title;
@@ -31,7 +31,7 @@ namespace CodeGeist2019.Controllers
                 Booky = Booky.Where(x => x.Category == "BookTag");
             }
             */
-            return View("Index", db.Book.ToList());
+            return View("BooksList", db.Book.ToList());
         }
 
         // GET: Books/Details/5
@@ -95,7 +95,7 @@ namespace CodeGeist2019.Controllers
 
             db.Book.Add(book);
             db.SaveChanges();
-            return RedirectToAction("Index","Books");
+            return RedirectToAction("BooksList","Books");
 
 
             //return View("Create",book);
