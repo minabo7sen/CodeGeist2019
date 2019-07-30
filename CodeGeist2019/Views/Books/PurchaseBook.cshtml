@@ -5,31 +5,36 @@
         <div class="m-portlet__head-caption">
             <div class="m-portlet__head-title">
                 <h3 class="m-portlet__head-text">
-                    <h2>
+                    <h2 class="text-primary">
                         @Model.Title
                     </h2>
                     <span class="m-portlet__head-desc">
                         @Model.Category
                     </span>
                 </h3>
-                <div class="align-content-end col-md-7">
+
+            </div>
+        </div>
+        <div class="m-portlet__head-tools">
+            <div class="row">
+
+                <div class="col-md-7"></div>
+                <div class="align-content-end col-md-5">
                     <div class="form-group text-center">
-                        <img height="150" width="300" src="~/Content/mastercard.png" />
-                        <img height="166" width="329" src="~/Content/fawry.png" />
+                        <img height="77" width="128" src="~/Content/mastercard.png" />
+                        <img height="83" width="164" src="~/Content/fawry.png" />
 
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="m-portlet__head-tools">
             <ul class="m-portlet__nav">
                 <li class="m-portlet__nav-item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
-                    
+
                     <div class="col-md-12 mt-3">
                         @Html.ActionLink("Confirm Purchase", "ConfirmPurchase", new { id = Model.ID }, new { @class = "btn m-btn--pill  btn-success" })
                     </div>
                 </li>
-            
+
             </ul>
         </div>
     </div>
@@ -83,5 +88,5 @@
     </div>
 </div>
 
-    
+
 
