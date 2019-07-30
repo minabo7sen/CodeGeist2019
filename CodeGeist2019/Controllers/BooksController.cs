@@ -41,7 +41,8 @@ namespace CodeGeist2019.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Book.Include(b => b.File).SingleOrDefault(b=> b.ID == id);
+            Book book = db.Book.Include(b => b.File)
+                                .Include(b => b.Author).SingleOrDefault(b=> b.ID == id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -121,13 +122,13 @@ namespace CodeGeist2019.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,Price,Rating,AgeLimit,Category,Views")] Book book)
+        public ActionResult Edit(Book book)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(book).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("BooksList");
             }
             return View(book);
         }

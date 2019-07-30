@@ -3,48 +3,112 @@
     ViewBag.Title = "Home Page";
 }
 @*
-@using (Html.BeginForm())
-{
-    <p> search by Category :@Html.DropDownList("BookTag")
-    <br/>
-    <input type="submit" value="Filter"/>
-    </p>
-       
-}*@
+    @using (Html.BeginForm())
+    {
+        <p> search by Category :@Html.DropDownList("BookTag")
+        <br/>
+        <input type="submit" value="Filter"/>
+        </p>
+
+    }*@
 <div class="row">
-@foreach (var item in Model)
-{
-    <div class="card-deck col-md-3" id="pady">
-        <div class="card text-center">
-            <div class="card-img-top" src="" alt="Book Image"></div>
-            <div class="card-body">
-                <h4 class="card-title">@item.Title</h4>
-                <p class="card-text">@item.Description</p>
-            </div>
-            <div class="card-footer">
-                <div class="float-left">
-                   <a href="/"><img id="sizing" src="~/Content/SVG/heart-solid (1).svg"/></a>
-                    <a href="#">Comment</a>
+    @foreach (var item in Model)
+    {
+        @*<div class="card-deck col-md-3" id="pady">
+                <div class="card text-center">
+                    <div class="card-img-top" src="" alt="Book Image"></div>
+                    <div class="card-body">
+                        <h4 class="card-title">@item.Title</h4>
+                        <p class="card-text">@item.Description</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="float-left">
+                            <a href="/"><img id="sizing" src="~/Content/SVG/heart-solid (1).svg" /></a>
+                            <a href="#">Comment</a>
+                        </div>
+                        <div class="float-right">
+                            <small>Rating: <strong>@item.Rating</strong></small>
+                        </div>
+                    </div>
                 </div>
-                <div class="float-right">
-                    <small>Rating: <strong>@item.Rating</strong></small>
+            </div>*@
+        <div class="col-xl-4">
+            <!--begin:: Widgets/Blog-->
+            <div class="m-portlet m-portlet--bordered-semi m-portlet--full-height  m-portlet--rounded-force">
+                <div class="m-portlet__head m-portlet__head--fit">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-action">
+                            @*<button type="button" class="btn btn-sm m-btn--pill  btn-brand">
+                                    Blog
+                                </button>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="m-portlet__body">
+                    <div class="m-widget19">
+                        <div class="m-widget19__pic m-portlet-fit--top m-portlet-fit--sides" style="min-height-: 286px">
+                            <img src="~/Content/bookcover.jpg" alt="">
+                            <h3 class="m-widget19__title m--font-light">
+                                @item.Title
+                            </h3>
+                            <div class="m-widget19__shadow"></div>
+                        </div>
+                        <div class="m-widget19__content">
+                            <div class="m-widget19__header">
+                                <div class="m-widget19__user-img">
+                                    @if (item.Author.Gender == "Male")
+                                    {
+                                        <img class="m-widget19__img" src="~/scripts/assets/app/media/img/users/user4.jpg" alt="">
+                                    }
+                                    else
+                                    {
+                                        <img class="m-widget19__img" src="~/scripts/assets/app/media/img/users/user1.jpg" alt="">
+                                    }
+                                </div>
+                                <div class="m-widget19__info">
+                                    <span class="m-widget19__username">
+                                        @item.Author.Name
+                                    </span>
+                                    <br>
+                                    <span class="m-widget19__time">
+                                        @item.Author.BioGraphy
+                                    </span>
+                                </div>
+                                <div class="m-widget19__stats">
+                                    <span class="m-widget19__number m--font-brand">
+                                        @item.AllowedAccounts.Count
+                                    </span>
+                                    <span class="m-widget19__comment">
+                                        Bought
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="m-widget19__body">
+                                @item.Description
+                            </div>
+                        </div>
+                        <div class="m-widget19__action">
+                            <button type="button" class="btn m-btn--pill btn-secondary m-btn m-btn--hover-brand m-btn--custom">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!--end:: Widgets/Blog-->
         </div>
-    </div>
 
 
-}
-</div>    
+    }
+</div>
 
 <style>
     #pady {
-        
-       margin-bottom:30px;
+        margin-bottom: 30px;
     }
+
     #sizing {
-       height:16px;
-       width:16px;
-        
+        height: 16px;
+        width: 16px;
     }
 </style>

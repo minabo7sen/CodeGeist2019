@@ -15,7 +15,7 @@ namespace CodeGeist2019.Controllers
 
         public ActionResult Index()
         {
-            var books = new List<Book>(Db.Book);
+            var books = Db.Book.Include(b => b.Author).ToList();
            
             return View(books);
         }
