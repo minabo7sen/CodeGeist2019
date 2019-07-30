@@ -142,6 +142,19 @@ namespace CodeGeist2019.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public ActionResult ConfirmPurchase(int id)
+        {
+            var purchasedBook = db.Book.SingleOrDefault(b => b.ID == id);
+            var email = User.Identity.GetUserName();
+            var Acc = db.Account.SingleOrDefault(a => a.Email == email);
+
+            Acc.BoughtBooks.Add(purchasedBook);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
+        }
+       
         //protected override void Dispose(bool disposing)
         //{
         //    if (disposing)

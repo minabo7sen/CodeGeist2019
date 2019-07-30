@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace CodeGeist2019.Controllers
 {
@@ -69,7 +70,8 @@ namespace CodeGeist2019.Controllers
         {
             var email = User.Identity.GetUserName();
 
-            var Acc = _context.Account.SingleOrDefault(a => a.Email == email);
+            Account Acc = _context.Account.Include(a => a.BoughtBooks.Select(b => b.Author))
+                                          .SingleOrDefault(a => a.Email == email);
 
             return View("MyProfile", Acc);
         }
