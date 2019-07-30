@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
-
+using System.Web.Security;
 
 namespace CodeGeist2019.Controllers
 {
@@ -33,5 +33,16 @@ namespace CodeGeist2019.Controllers
 
             return View();
         }
+
+
+        
+
+        public ActionResult Designer()
+        {
+            var x = Roles.GetUsersInRole("Designer");
+
+            return View();
+        }
+
     }
 }
