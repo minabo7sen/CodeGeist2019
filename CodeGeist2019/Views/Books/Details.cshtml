@@ -9,56 +9,65 @@
 <div>
     <h4>Book</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+    <div class="container">
+        <div class="row">
+            <dl class="col-4 dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Rating)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AgeLimit)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AgeLimit)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AgeLimit)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.AgeLimit)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Views)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Views)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Views)
-        </dd>
-
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.Views)
+                </dd>
+            </dl>
+            <div class="clearfix">
+                <div class="col float-right">
+                    <object data="\Books\@Html.DisplayFor(model => model.File.FilePath)" type="application/pdf"
+                            width="450" height="550"></object>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
