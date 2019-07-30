@@ -4,66 +4,60 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>Book</h4>
+    <div class="clearfix">
+        <div class="float-left">
+            <h2>@Html.DisplayFor(model => model.Title)</h2>
+        </div>
+
+        <div class="float-right">
+            <h2>@Html.DisplayFor(model => model.Price)$</h2>
+        </div>
+    </div>
     <hr />
     <div class="container">
         <div class="row">
-            <dl class="col-4 float-left dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.Title)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Title)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Price)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Price)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Rating)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Rating)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.AgeLimit)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.AgeLimit)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Category)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Category)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Views)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Views)
-                </dd>
-            </dl>
-            <div class="col float-right">
-                <h5><strong>View</strong></h5>
+            <div class="col-lg-8">
+                <h5><strong>Preview</strong></h5>
                 <object data="\Books\@Html.DisplayFor(model => model.File.FilePath)" type="application/pdf"
-                        width="450" height="550"></object>
+                        width="100%" height="550"></object>
+            </div>
+
+            <div class="col-4">
+                <h5><strong>Extra Info.</strong></h5>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Rating)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Rating)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AgeLimit)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AgeLimit)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Category)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Category)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Views)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Views)
+                    </dd>
+                </dl>
             </div>
         </div>
     </div>
