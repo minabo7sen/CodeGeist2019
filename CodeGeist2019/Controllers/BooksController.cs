@@ -77,6 +77,10 @@ namespace CodeGeist2019.Controllers
                 db.SaveChanges();
                 book.File = db.BookFiles.SingleOrDefault(f => f.FilePath == FileName);
             }
+            var email = User.Identity.GetUserName();
+            var Acc = db.Account.SingleOrDefault(a => a.Email == email);
+            book.Author = Acc;
+
             db.Book.Add(book);
             db.SaveChanges();
             return RedirectToAction("Index","Books");
