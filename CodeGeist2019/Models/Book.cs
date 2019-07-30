@@ -23,6 +23,8 @@ namespace CodeGeist2019.Models
         public Account Author { get; set; }
         public BookFile File { get; set; }
 
+        public virtual ICollection<Account> AllowedAccounts { get; set; }
+
     }
     
 }

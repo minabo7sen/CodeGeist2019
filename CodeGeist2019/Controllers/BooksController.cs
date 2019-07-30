@@ -28,7 +28,7 @@ namespace CodeGeist2019.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Book.Find(id);
+            Book book = db.Book.Include(b => b.File).SingleOrDefault(b=> b.ID == id);
             if (book == null)
             {
                 return HttpNotFound();
