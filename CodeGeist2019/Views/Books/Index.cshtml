@@ -41,8 +41,18 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td class="text-primary">
-            $
+            @if(item.Price == 0)
+            {
+                <label class="text-success">
+                    FREE
+                </label>
+            }
+            else
+            {
+
+            @: $
             @Html.DisplayFor(modelItem => item.Price)
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rating)
