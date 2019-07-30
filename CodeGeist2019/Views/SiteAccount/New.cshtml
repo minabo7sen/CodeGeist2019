@@ -40,7 +40,7 @@
             <div class="checkbox">
                 @Html.DropDownListFor(model => model.NewUser.Gender, new List<SelectListItem> {
                        new SelectListItem { Value = "Male" , Text = "Male"},
-                       new SelectListItem { Value = "Female" , Text = "Female" } },"Select Gender", new { htmlAttributes = new { @class = "form-control" } })
+                       new SelectListItem { Value = "Female" , Text = "Female" } },"Select Gender",  new { @class = "form-control" } )
                 @Html.ValidationMessageFor(model => model.NewUser.Gender, "", new { @class = "text-danger" })
             </div>
         </div>

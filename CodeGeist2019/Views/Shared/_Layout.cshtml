@@ -55,7 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="m-stack__item m-brand  m-brand--skin-dark ">
                         <div class="m-stack m-stack--ver m-stack--general">
                             <div class="m-stack__item m-stack__item--middle m-brand__logo ">
-                                <a href="@Url.Action("Index","Home")" class="m-brand__logo-wrapper">
+                                <a href="@Url.Action("Index", "Home")" class="m-brand__logo-wrapper">
                                     <img alt="" src="~/Content/SVG/ancient.svg" width="36" height="36" />
 
                                 </a>
@@ -590,7 +590,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
                                         </div>
                                     </li>
-                                    @if (User.Identity.IsAuthenticated)
+                                    @{
+
+                                        string CurrentURL = Request.Url.AbsoluteUri;
+                                    }
+
+                                    @if (User.Identity.IsAuthenticated && !CurrentURL.Contains("New"))
                                     {
                                         <li class="m-nav__item m-topbar__notifications m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width" m-dropdown-toggle="click" m-dropdown-persistent="1">
                                             <a href="#" class="m-nav__link m-dropdown__toggle" id="m_topbar_notification_icon">
@@ -866,7 +871,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
                                         </li>
-                                        using(var db = new ApplicationDbContext())
+                                        using (var db = new ApplicationDbContext())
                                         {
                                             var email = User.Identity.Name;
                                             var acc = db.Account.SingleOrDefault(a => a.Email == email);
@@ -907,11 +912,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     @if (acc.Gender == "Male")
                                                                     {
 
-                                                                    <img src="~/scripts/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt="" />
+                                                                        <img src="~/scripts/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt="" />
                                                                     }
                                                                     else
                                                                     {
-                                                                    <img src="~/scripts/assets/app/media/img/users/user1.jpg" class="m--img-rounded m--marginless" alt="" />
+                                                                        <img src="~/scripts/assets/app/media/img/users/user1.jpg" class="m--img-rounded m--marginless" alt="" />
 
                                                                     }
 
@@ -971,9 +976,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                     }
                                     else
                                     {
-                                        <a href = "@Url.Action("Login", "Account")" class="btn btn-primary m-btn m-btn--icon m-btn--wide">
+                                        <a href="@Url.Action("Login", "Account")" class="btn btn-primary m-btn m-btn--icon m-btn--wide">
 
-                                        Login
+                                            Login
 
                                         </a>
 

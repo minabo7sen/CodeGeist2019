@@ -34,6 +34,7 @@ namespace CodeGeist2019.Controllers
         [HttpPost]
         public ActionResult Save(UserViewModel uvm)
         {
+
             var id = User.Identity.GetUserId();
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_context));
 
@@ -63,7 +64,7 @@ namespace CodeGeist2019.Controllers
 
             _context.Account.Add(account);
             _context.SaveChanges();
-            return View("../Home/Index");
+            return RedirectToAction("Index","Home");
         }
 
         public ActionResult MyProfile()
